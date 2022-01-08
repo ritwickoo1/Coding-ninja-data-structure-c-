@@ -19,8 +19,20 @@ class TreeNode {
     }
 };
 
-#include "solution.h"
-
+void replaceWithDepthValueHelper(TreeNode<int> * root,int depth){
+    root->data = depth;
+    for(int i = 0; i < root->children.size();i++){
+        replaceWithDepthValueHelper(root->children[i],depth+1);
+    }
+}
+void replaceWithDepthValue(TreeNode<int>* root) {
+    // Write your code here
+    if(root==NULL){
+        return ;
+    }
+    int depth = 0;
+    replaceWithDepthValueHelper(root,depth);
+}
 TreeNode<int>* takeInputLevelWise() {
     int rootData;
     cin >> rootData;
