@@ -79,7 +79,6 @@ class Trie {
 		for(int i = 0; i < vect.size(); i++){
 			while(vect[i].size()!=0){
 				insertWord(vect[i]);
-				cout<<vect[i]<<endl;
 				vect[i] = vect[i].substr(1);
 			}
 		}
